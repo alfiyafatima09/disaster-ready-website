@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
               </button>
               {dropdown === 'resources' && (
                 <div className="absolute top-full left-0 mt-2 bg-white text-black py-2 rounded shadow-md w-48">
-                  <Link href="/" className="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300" onClick={() => setIsMenuOpen(false)}>
+                  <Link href="/preparedness" className="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300" onClick={() => setIsMenuOpen(false)}>
                     Preparedness
                   </Link>
                   <Link href="/" className="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300" onClick={() => setIsMenuOpen(false)}>
@@ -109,7 +109,7 @@ const Navbar: React.FC = () => {
           </button>
           {dropdown === 'resources' && (
             <div className="pl-4">
-              <Link href="/" className="block py-2 hover:text-gray-300 transition-colors duration-300" onClick={toggleMenu}>
+              <Link href="/preparedness" className="block py-2 hover:text-gray-300 transition-colors duration-300" onClick={toggleMenu}>
                 Preparedness
               </Link>
               <Link href="/" className="block py-2 hover:text-gray-300 transition-colors duration-300" onClick={toggleMenu}>
