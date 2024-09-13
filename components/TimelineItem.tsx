@@ -21,7 +21,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
     <div className={`relative flex flex-col md:flex-row ${position === "left" ? "md:justify-start" : "md:justify-end"} mb-10`}>
       {/* Image and Date Container */}
       <div className={`relative flex-shrink-0 ${position === "left" ? "md:pr-4" : "md:pl-4"} mb-4 md:mb-0 ${position === "left" ? "md:mr-4" : "md:ml-4"} flex flex-col items-center md:items-start`}>
-        <div className="relative w-20 h-20">
+        <div className="relative w-24 h-24">
           <Image
             src={image}
             alt={title}
