@@ -62,7 +62,7 @@ const Navbar: React.FC = () => {
                   <Link href="/" className="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300" onClick={() => setIsMenuOpen(false)}>
                     Government Schemes
                   </Link>
-                  <Link href="/" className="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300" onClick={() => setIsMenuOpen(false)}>
+                  <Link href="/educate" className="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300" onClick={() => setIsMenuOpen(false)}>
                     Educate Yourself
                   </Link>
                 </div>
@@ -132,7 +132,7 @@ const Navbar: React.FC = () => {
               <Link href="/" className="block py-2 hover:text-gray-300 transition-colors duration-300" onClick={toggleMenu}>
                 Government Schemes
               </Link>
-              <Link href="/" className="block py-2 hover:text-gray-300 transition-colors duration-300" onClick={toggleMenu}>
+              <Link href="/educate" className="block py-2 hover:text-gray-300 transition-colors duration-300" onClick={toggleMenu}>
                 Educate Yourself
               </Link>
             </div>
