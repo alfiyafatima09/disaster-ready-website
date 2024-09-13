@@ -1,14 +1,16 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [dropdown, setDropdown] = useState<string | null>(null);
+  const navbarRef = useRef<HTMLDivElement>(null);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
   const toggleDropdown = (menu: string) => {
     if (dropdown === menu) {
       setDropdown(null);
@@ -17,12 +19,27 @@ const Navbar: React.FC = () => {
     }
   };
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (navbarRef.current && !navbarRef.current.contains(event.target as Node)) {
+        setDropdown(null);
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
-    <nav className="bg-[#0B2F9F] text-white shadow-lg">
-      <div className="container mx-auto flex items-center justify-between p-4">
+    <nav ref={navbarRef} className="bg-[#0B2F9F] text-white shadow-lg z-50">
+      <div className="container mx-0 flex items-center justify-between p-4 ">
         {/* Logo and Main Links for Desktop */}
         <div className="flex items-center space-x-6 flex-grow">
-          <Link href="/" className="text-2xl font-bold" onClick={() => setIsMenuOpen(false)}>
+          <Link href="/" className="text-2xl font-bold " onClick={() => setIsMenuOpen(false)}>
             {/* Replace with your logo */}
             Logo
           </Link>
@@ -38,7 +55,7 @@ const Navbar: React.FC = () => {
                 Resources ▼
               </button>
               {dropdown === 'resources' && (
-                <div className="absolute top-full left-0 mt-2 bg-white text-black py-2 rounded shadow-md w-48">
+                <div className="absolute top-full left-0 mt-2 bg-white text-black py-2 rounded shadow-md w-48 z-50">
                   <Link href="/preparedness" className="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300" onClick={() => setIsMenuOpen(false)}>
                     Preparedness
                   </Link>
@@ -59,7 +76,7 @@ const Navbar: React.FC = () => {
                 Community ▼
               </button>
               {dropdown === 'community' && (
-                <div className="absolute top-full left-0 mt-2 bg-white text-black py-2 rounded shadow-md w-48">
+                <div className="absolute top-full left-0 mt-2 bg-white text-black py-2 rounded shadow-md w-48 z-50">
                   <Link href="/volunteers" className="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300" onClick={() => setIsMenuOpen(false)}>
                     Volunteers
                   </Link>
@@ -77,7 +94,7 @@ const Navbar: React.FC = () => {
                 About ▼
               </button>
               {dropdown === 'about' && (
-                <div className="absolute top-full left-0 mt-2 bg-white text-black py-2 rounded shadow-md w-48">
+                <div className="absolute top-full left-0 mt-2 bg-white text-black py-2 rounded shadow-md w-48 z-50">
                   <Link href="/" className="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300" onClick={() => setIsMenuOpen(false)}>
                     About Our App
                   </Link>
@@ -97,7 +114,7 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-[#0B2F9F] text-white p-4">
+        <div className="md:hidden bg-[#0B2F9F] text-white p-4 z-50">
           <Link href="/" className="block py-2 hover:text-gray-300 transition-colors duration-300" onClick={toggleMenu}>
             Home
           </Link>
@@ -156,4 +173,3 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
-
