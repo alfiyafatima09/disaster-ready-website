@@ -39,7 +39,10 @@ const Navbar: React.FC = () => {
   }, []);
 
   return (
-    <nav ref={navbarRef} className="bg-[#0B2F9F] text-white shadow-lg z-50">
+    <nav
+      ref={navbarRef}
+      className="bg-[#0B2F9F] text-white shadow-lg z-50 sticky top-0"
+    >
       <div className="container mx-0 flex items-center justify-between p-4 ">
         {/* Logo and Main Links for Desktop */}
         <div className="flex items-center space-x-6 flex-grow">
