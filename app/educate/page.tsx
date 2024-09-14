@@ -38,7 +38,7 @@ const EducateYourselfPage = () => {
               Ready to Make a Difference?<br />
               Learn About Innovative Solutions for Disaster Management!
             </h2>
-            <Link href="/solutions" className="inline-block bg-white text-[#0B2F9F] py-1 px-3 text-xs md:text-sm rounded-md hover:bg-gray-200">
+            <Link href="/educate/solutions" className="inline-block bg-white text-[#0B2F9F] py-1 px-3 text-xs md:text-sm rounded-md hover:bg-gray-200">
               Discover Solutions
             </Link>
           </div>
