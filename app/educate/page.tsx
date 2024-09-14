@@ -28,7 +28,7 @@ const EducateYourselfPage = () => {
             <h2 className="text-sm md:text-base font-semibold leading-tight">
               Ever Wondered Why Disasters Happen?<br />
             </h2>
-            <Link href="/causes" className="inline-block bg-white text-[#0B2F9F] py-1 px-3 text-xs md:text-sm rounded-md hover:bg-gray-200">
+            <Link href="/educate/causes" className="inline-block bg-white text-[#0B2F9F] py-1 px-3 text-xs md:text-sm rounded-md hover:bg-gray-200">
               Explore Now
             </Link>
           </div>
