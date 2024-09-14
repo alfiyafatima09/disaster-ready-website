@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { FaBars, FaTimes } from "react-icons/fa";
+// import Image from "next/image";
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -50,6 +51,7 @@ const Navbar: React.FC = () => {
             {/* Replace with your logo */}
             RescueRing
           </Link>
+          <img src="/logo/logo.png" alt="logo" width={40} />
           <div className="hidden md:flex space-x-6">
             <div className="relative">
               <button
