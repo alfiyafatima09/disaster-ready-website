@@ -34,8 +34,12 @@ export default function Home() {
         <div className="w-3/5 pl-6">
           <h2 className="text-4xl font-bold mb-4">RescueRing</h2>
           <p className="text-lg text-gray-700">
-            Your subheading text goes here. Provide relevant information or
-            details that complement the heading.
+            RescueRing is a disaster management solution that combines a mobile
+            app for real-time community support during emergencies and a website
+            for pre-disaster education and preparedness. The app helps users
+            mark safe locations, request assistance, and manage relief efforts.
+            The website focuses on disaster preparedness, understanding disaster
+            causes, and offering solutions, promoting awareness and readiness.
           </p>
         </div>
       </div>
