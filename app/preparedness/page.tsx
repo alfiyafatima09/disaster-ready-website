@@ -10,14 +10,14 @@ const PreparednessPage = () => {
     const value = event.target.value;
     setSelectedDisaster(value);
     if (value) {
-      window.location.href = `/preparedness/${value}`;
+      window.location.href = `preparedness/${value}`;
     }
   };
 
   return (
     <div 
       className={`relative min-h-screen bg-cover bg-center ${styles.fadeInBackground}`} 
-      style={{ backgroundImage: 'url(/preparedness.jpg)' }}
+      style={{ backgroundImage: 'url(preparedness.jpg)' }}
     >
       <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-70"></div>
       <div className="relative flex flex-col items-center justify-start min-h-screen p-6 text-center pt-20 md:pt-32 lg:pt-40"> {/* Adjusted to justify-start and added padding at the top */}
