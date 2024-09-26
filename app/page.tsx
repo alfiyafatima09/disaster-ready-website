@@ -40,7 +40,7 @@ export default function Home() {
         </div>
         <div className="flex w-1/1 items-center justify-center">
           <img
-            src="/logo/logo.png"
+            src="logo/logo.png"
             alt="Logo"
             className="object-contain w-3/5"
           />
