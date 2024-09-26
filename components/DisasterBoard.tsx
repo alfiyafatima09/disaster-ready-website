@@ -103,14 +103,14 @@ const DisasterBoard: React.FC = () => {
   };
 
   return (
-    <div className="p-4">
+    <div className="p-8">
       {/* Category buttons centered */}
       <div className="flex justify-center flex-wrap gap-2 mb-6">
         {categories.map((category) => (
           <button
             key={category}
-            className={`px-4 py-2 rounded bg-blue-500 text-white focus:outline-none transition-transform transform-gpu hover:scale-105 ${
-              selectedCategory === category ? "bg-blue-700" : "bg-blue-500"
+            className={`px-4 py-2 rounded focus:outline-none transition-transform transform-gpu hover:scale-105 ${
+              selectedCategory === category ? "bg-stone-300 text-black font-bold" : "bg-black text-white"
             }`}
             onClick={() => handleCategoryClick(category)}
           >
@@ -118,8 +118,6 @@ const DisasterBoard: React.FC = () => {
           </button>
         ))}
       </div>
-
-      {/* Centered heading */}
       <div className="text-center">
         <h2 className="text-2xl font-bold mb-4 capitalize">
           {selectedCategory} Resources
@@ -127,13 +125,13 @@ const DisasterBoard: React.FC = () => {
       </div>
 
       {/* Display relevant content for the selected category */}
-      <div className="bg-gray-100 p-6 rounded shadow-lg">
-        <div className="space-y-4">
+      <div className="bg-gray-100 p-4 rounded shadow-lg">
+        <div className="md:grid md:grid-cols-2 md:gap-4">
           {data[selectedCategory as keyof typeof data]?.map((item) =>
             item ? (
               <div
                 key={item.title}
-                className="p-4 bg-white rounded shadow hover:bg-gray-50 transition-all transform hover:scale-105 cursor-pointer"
+                className="p-4 bg-white rounded shadow hover:bg-gray-50 transition-all transform hover:scale-105 cursor-pointer mb-2"
                 onClick={() => window.open(item.link, "_blank")}
               >
                 <h3 className="text-xl font-semibold">{item.title}</h3>
