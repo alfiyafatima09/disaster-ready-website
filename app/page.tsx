@@ -9,7 +9,6 @@ export default function Home() {
         <div className="relative w-full">
           <video
             src="bg.mp4"
-            alt="Disaster Awareness"
             className="w-full h-screen object-cover object-center filter brightness-50 contrast-110"
             autoPlay
             loop
